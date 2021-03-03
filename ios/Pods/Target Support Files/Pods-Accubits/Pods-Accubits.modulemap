@@ -1,0 +1,6 @@
+module Pods_Accubits {
+  umbrella header "Pods-Accubits-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+module Pods_Accubits_AccubitsTests {
+  umbrella header "Pods-Accubits-AccubitsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
