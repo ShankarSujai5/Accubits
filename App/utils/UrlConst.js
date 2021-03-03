@@ -1,7 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
-
-
 export const _storeData = async (key, value) => {
   console.log(key, value)
   try {
