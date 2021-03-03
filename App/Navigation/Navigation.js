@@ -1,10 +1,8 @@
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Login from '../Screens/Login'
 import TabNav from './Tabnavigator'
-//import AuthScreen from './AuthScreen'
 
 const Loginstack = createStackNavigator({
   Login: { screen: Login }
