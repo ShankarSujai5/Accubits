@@ -15,7 +15,6 @@ export const _retrieveItem = async (key) => {
   try {
     const retrievedItem = await AsyncStorage.getItem(key);
     const item = JSON.parse(retrievedItem);
-    // console.warn("Item:"+item)
     return item;
   } catch (error) {
     console.log(error.message);

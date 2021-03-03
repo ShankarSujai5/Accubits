@@ -8,33 +8,19 @@
 
 import React from 'react';
 import {
-    SafeAreaView,
     StyleSheet,
-    ScrollView,
     View,
     Text,
-    StatusBar,
-    TouchableOpacity,
     Dimensions,
     Image,
-    Switch
 } from 'react-native';
-
-import {
-    Header,
-    LearnMoreLinks,
-    Colors,
-    DebugInstructions,
-    ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 import { Container, Content } from 'native-base';
-import AsyncStorage from '@react-native-community/async-storage';
 import { _storeData, _removeItem, _retrieveItem } from '../utils/UrlConst';
 
 let screenHeight = Dimensions.get('window').height;
 let screenWidth = Dimensions.get('window').width;
 
-//console.warn("screenheight", screenHeight)
+
 class App extends React.Component {
    
     static navigationOptions = ({ navigation }) => {

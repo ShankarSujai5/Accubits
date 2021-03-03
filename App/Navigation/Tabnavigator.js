@@ -65,15 +65,6 @@ const TabNavigator = createMaterialBottomTabNavigator(
 
                     ) : (
                             <View style={styles.barIconConatiner}>
-                                {/*  {<Image
-                                    style={{
-                                        width: 28,
-                                        height: 28,
-                                        position: "relative",
-                                        resizeMode: "contain"
-                                    }}
-                                    source={require('../assets/images/tabbar/menu_dashboard.png')}
-                                />} */}
                                 <View>
                                     <Text style={{ fontSize: 11.9, color: "#EF0D33" }}>Dashboard</Text>
                                 </View>

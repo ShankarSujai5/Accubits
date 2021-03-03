@@ -31,7 +31,7 @@ class App extends React.Component {
         return {
             headerShown: false,
         }
-     };
+    };
 
     constructor(props) {
         super(props);
@@ -44,9 +44,20 @@ class App extends React.Component {
             ErrorPasswordStatus: true,
             ErrorMessage_Email: '',
             ErrorMessage_Password: '',
+            inputClear: false,
 
         };
     }
+    async componentDidMount() {
+        const { navigation } = this.props;
+        this.focusListener = navigation.addListener('willFocus', () => {
+            this.setState({
+                inputClear: true, UserName: "", Password: "", ErrorEmailStatus: true, ErrorPasswordStatus: true, ErrorMessage_Email: '',
+                ErrorMessage_Password: '',
+            });
+        });
+    }
+
     clearText() {
         this.setState({ UserName: '' })
         this.setState({ Password: '' })
@@ -93,9 +104,8 @@ class App extends React.Component {
         return (
             <>
                 <Container style={styles.container}>
-                    <ScrollView style={{ backgroundColor: "#FFFFFF" }}>
+                    <ScrollView style={styles.scrollcolour}>
                         <View style={styles.scrollstyle}>
-                            {/* <Image style={{ marginTop: ('10%') }} source={require('../assets/images/logo_lowres.png')} /> */}
                             <Image style={styles.imagelogo} source={require('../assets/images/logo_highres.png')} />
                             <View>
                                 <AuthTextInput style={styles.input1}
@@ -119,10 +129,7 @@ class App extends React.Component {
                                 </TouchableOpacity>
                             </View>
                         </View>
-
-
                     </ScrollView>
-
                 </Container>
             </>
         );
@@ -131,14 +138,17 @@ class App extends React.Component {
 
 
 const styles = StyleSheet.create({
-   container:{
-    backgroundColor: "#EF0D33"
-   },
-   scrollstyle:{
-    justifyContent: "center", 
-    alignItems: "center",
-     alignSelf: "center"
-   },
+    container: {
+        backgroundColor: "#EF0D33"
+    },
+    scrollcolour: {
+        backgroundColor: "#FFFFFF"
+    },
+    scrollstyle: {
+        justifyContent: "center",
+        alignItems: "center",
+        alignSelf: "center"
+    },
 
     input1: {
         borderBottomWidth: 0.5,
@@ -150,9 +160,9 @@ const styles = StyleSheet.create({
         height: 200,
         width: 200
     },
-    textStyle:{
-        color: '#FFFFFF', 
-        fontFamily:'Montserrat-Bold'
+    textStyle: {
+        color: '#FFFFFF',
+        fontFamily: 'Montserrat-Bold'
     },
     buttonstyle: {
         height: 40,

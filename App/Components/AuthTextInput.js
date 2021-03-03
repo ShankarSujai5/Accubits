@@ -43,9 +43,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#000000',
         backgroundColor: '#FFFFFF'
-        //  placeholderTextColor="grey",
-        // autoCapitalize="none",
-        // fontFamily: 'Montserrat-Medium'
     }
 });
 
